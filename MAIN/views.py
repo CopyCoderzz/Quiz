@@ -15,7 +15,7 @@ import smtplib
 
 secret_key = "key"
 
-
+print("quizzz")
 # Create your views here.
 
 def index(request):
