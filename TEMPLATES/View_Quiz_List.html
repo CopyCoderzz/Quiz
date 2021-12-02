@@ -1,0 +1,26 @@
+{% extends 'extra.html' %}
+ 
+{% block content %}
+<body>
+    <form action="" method="post" >
+    {% csrf_token %}
+        <table border="1" class="table table-border">
+        <tr>
+            <th>Sl.No</th>
+            <th>Exam Name</th>
+            <th></th>
+        </tr>
+     {%for u in data%}
+     <tr>
+     {%if u.exam_name not in exml%}
+        <td>{{ forloop.counter }}</td>
+        
+        <td>{{ u.exam_name }}</td>
+        
+        <td><a href="/start/{{u.exam_name}}">OPEN</a></td>
+    {%endif%}
+    </tr>
+        {% endfor %}
+</form>
+</body>
+{% endblock%}

@@ -1,0 +1,21 @@
+{% extends 'extra.html' %}
+ 
+{% block content %}
+<body>
+    <form action="/upload_file" method="post" enctype="multipart/form-data" >
+        {% csrf_token %}
+        <div>
+            <label>Exam Name</label>
+            <input type="text" name="exam_name" id="exam_name" placeholder="Enter Exam Name"> 
+            <div>
+            <label>Exam Date</label>
+            <input type="date" name="exam_date" id="exam_date"> 
+        </div>
+        </div>
+        <div>
+            <input type="file" name="file1" id="file"> 
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+</body>
+{%endblock%}

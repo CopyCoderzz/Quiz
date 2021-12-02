@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     {% comment %} <img src="{% static 'mail.jpeg'%}" alt=""  /> {% endcomment %}
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css' />
+</head>
+<style>
+.centered {
+  position: absolute;
+  top: 20%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+}
+
+</style>
+<body>
+<img src="{% static 'mail1.jpeg'%}" alt=""  />
+<div class="container">
+  <img src="mail.jpeg" alt="Snow" style="width:100%;">
+  {% comment %} <div class="bottom-left">Bottom Left</div>
+  <div class="top-left">Top Left</div>
+  <div class="top-right">Top Right</div>
+  <div class="bottom-right">Bottom Right</div> {% endcomment %}
+  <div class="centered">Name age</div>
+</div>
+</body>
+</html>

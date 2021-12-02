@@ -1,0 +1,27 @@
+{% extends 'extra.html' %}
+{% block content %}
+{% load static %}
+<body>
+    <form>
+    {%csrf_token%}
+        <table border="2" class="table table-border">
+            <tr>
+                <th>Sl.No</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Contact Number</th>
+               
+            </tr>
+            {%for u in data%}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{u.name}}</td>
+                <td>{{u.username}}</td>
+                <td>{{u.phone}}</td>
+               
+            </tr>
+            {% endfor %}
+        </table>
+    </form>
+</body>
+{%endblock%}

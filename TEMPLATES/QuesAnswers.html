@@ -1,0 +1,63 @@
+{#{% extends 'dependencies.html' %}#}
+{% extends 'extra.html' %}
+{% block content %}
+{% load static %}
+    <body>
+
+
+        </div>
+    </div>
+
+<div class="container ">
+<h1 style="color: goldenrod">ANSWERS</h1>
+
+
+ <form method='post' action=''>
+    {% csrf_token %}
+    {% for q  in users %}
+    <div class="form-group">
+      <label for="question">{{ forloop.counter }}.  {{q.question}}</label>
+
+    </div>
+    <div class="form-check">
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="{{q.question}}" id="gridRadios1" value="{{q.op1}}" {% if q.op1 == q.ans %}checked {% endif %} >
+            <label class="form-check-label" for="gridRadios1">
+                {{q.op1}}
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="{{q.question}}" id="gridRadios2" value="{{q.op2}}" {% if q.op2 == q.ans %}checked {% endif %}>
+            <label class="form-check-label" for="gridRadios2">
+                {{q.op2}}
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="{{q.question}}" id="gridRadios1" value="{{q.op3}}" {% if q.op3 == q.ans %}checked {% endif %}>
+            <label class="form-check-label" for="gridRadios1">
+                {{q.op3}}
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="{{q.question}}" id="gridRadios2" value="{{q.op4}}" {% if q.op4 == q.ans %}checked {% endif %}>
+            <label class="form-check-label" for="gridRadios2">
+                {{q.op4}}
+            </label>
+        </div><br>
+        <div class="form-group">
+      <label for="question">Explanation: {{q.exp}}</label>
+
+    </div>
+        <br>
+    </div>
+    {% endfor %}
+
+   <div>
+<a class="btn btn-primary" href="/">EXIT</a>
+        </div>
+  </form>
+
+</div>
+    </body>
+</div>
+{% endblock %}

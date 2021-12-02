@@ -1,0 +1,38 @@
+{% extends 'extra.html' %}
+ {% load static %}
+{% block content %}
+ 
+<div align="center" class="container ">
+        
+    <div align="center" class="card-columns" style="padding: 1px; margin: 2px;">
+        <div  class="card" align="centre " style="width: 48rem; border:5px black solid">
+            <img class="card-img-top" src="{% static 'OIP.jpg' %}" alt="Card image cap" width="250" height="150">
+            <div class="card-body">
+                <h5 class="card-title">Score: {{score}}</h5>
+ 
+                <p class="card-text">Percentage: {{percent}}%</p>
+                <p class="card-text">Time Taken: {{timer}} seconds</p>
+                <p class="card-text">Correct  : {{correct}}</p>
+                <p class="card-text">Wrong answers: {{wrong}}</p>
+                <p class="card-text">Not attempted : {{not_attempted}}</p>
+                <p class="card-text">Total questions: {{total}}</p>
+                {% if percent >= 75 %}
+                 <h5 style="color: #48e732">Excellent</h5>
+                     {% elif percent >= 50  %}
+                 <h5 style="color: #4043ff">Very Good</h5>
+                    {% elif  percent >= 25 %}
+                 <h5 style="color: #ffee35">Good</h5>
+                     {% else %}
+                 <h5 style="color: #ff2a27">Poor Try Again...</h5>
+                 {% endif %}
+            </div>
+        </div>
+
+    </div>
+<div>
+{% comment %} <a class="btn btn-danger" href="/showanswer/{{pk}}">SHOW ANSWER</a> {% endcomment %}
+        </div>
+ 
+</div>
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'extra.html' %}
+{% block content %}
+{% load static %}
+{% comment %} <h2 style="color: chocolate;"> <span style="font-style: italic;"> WELCOME {{data}} </span> </h2> {% endcomment %}
+<body>
+<form action="" method="post">
+<h2>Quiz Instructions</h2>
+<h5>There is 5 multiple questions</h5>
+<h5>Timer will be provided</h5>
+<div ><a class="btn btn-primary" href="/home/{{obj}}">START QUIZ</a><div>
+</body> 
+</form>
+{%endblock%}
